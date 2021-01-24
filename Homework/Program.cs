@@ -6,7 +6,7 @@ namespace Homework
     {
         static void Main(string[] args)
         {
-            /*{
+            {
                 Console.WriteLine("ДЗ 1 Задание 2");
                 Console.Write("A = "); int.TryParse(Console.ReadLine(), out int a);
                 Console.Write("B = "); int.TryParse(Console.ReadLine(), out int b);
@@ -123,7 +123,7 @@ namespace Homework
                 Console.WriteLine($"Минимальный элемент вашего массива: {min}");
                 Console.WriteLine($"Сумма всех элементов массива: {sum}");
                 Console.WriteLine($"Среднее арифметическое всех элементов: {sum / n}");
-            }*/
+            }
             {
                 Console.WriteLine("ДЗ2 Задание 3");
                 Console.Write("Введите длину массива: ");  int.TryParse(Console.ReadLine(), out int n);
@@ -137,10 +137,24 @@ namespace Homework
                     arr[i] = arr[i] - arr[n - 1- i];
                 }
                 Console.Write("\nВаш инвертированный массив: "); writeArray(arr);
-                    
-
             }
-            
+            {
+                Console.WriteLine("\nДЗ 2 Задание 4");
+                Console.Write("Введите длину массива: ");  int.TryParse(Console.ReadLine(), out int n);
+                int[] arr = new int[n];
+                for (int i  = 0; i < arr.Length; i++)   arr[i] = new Random().Next(-9,9);
+                Console.Write("Ваш массив: "); writeArray(arr);
+                Console.Write("\nCount = "); int.TryParse(Console.ReadLine(), out int count);
+                Console.Write("Index = "); int.TryParse(Console.ReadLine(), out int index);
+                int[] arr1 = new int[count];
+                for (int i = 0; i < count; i++)
+                {
+                    if (index <= arr.Length - 1) arr1[i] = arr[index];
+                    else arr1[i] = 1;
+                    index++;
+                }
+                Console.Write("Ваш новый массив: "); writeArray(arr1);
+            }
         }
         static void writeArray(int[] arr)
         {

@@ -6,7 +6,7 @@ namespace Homework
     {
         static void Main(string[] args)
         {
-            {
+            /*{
                 Console.WriteLine("ДЗ 1 Задание 2");
                 Console.Write("A = "); int.TryParse(Console.ReadLine(), out int a);
                 Console.Write("B = "); int.TryParse(Console.ReadLine(), out int b);
@@ -102,7 +102,34 @@ namespace Homework
                 }while (s <= 1100);
                 Console.WriteLine($"k = {k} ");
                 Console.WriteLine($"S = {s}");
+            }*/
+            {
+                Console.WriteLine("ДЗ2 Задание 2");
+                Console.Write("N = "); int.TryParse(Console.ReadLine(), out int n);
+                int[] arr = new int[n];
+                for (int i  = 0; i < arr.Length; i++)
+                    arr[i] = new Random().Next(-9,9);
+                Console.Write("Ваш массив: "); writeArray(arr);
+                int max = arr[0], min = arr[0];
+                double sum = 0;;
+                Console.Write("\nНечетные значения вашего массива: ");
+                for(int i = 0; i < arr.Length; i++)
+                {
+                    if (arr[i] < min) min = arr[i];
+                    if (arr[i] > max) max = arr[i];
+                    sum+=arr[i];
+                    if (arr[i] % 2 != 0) Console.Write($"{arr[i]} ");
+                }
+                Console.WriteLine($"\nМаксимальный элемент вашего массива: {max}");
+                Console.WriteLine($"Минимальный элемент вашего массива: {min}");
+                Console.WriteLine($"Сумма всех элементов массива: {sum}");
+                Console.WriteLine($"Среднее арифметическое всех элементов: {sum / n}");
             }
+            
+        }
+        static void writeArray(int[] arr)
+        {
+            foreach (var item in arr) Console.Write($"{item} ");
         }
     }
 }
